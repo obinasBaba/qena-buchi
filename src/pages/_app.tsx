@@ -19,6 +19,7 @@ import '@global/index.scss';
 import 'simplebar-react/dist/simplebar.min.css';
 import { useNProgress } from '@/util/hooks';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { AnimatePresence } from 'framer-motion';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -72,7 +73,9 @@ export default function MyApp({
               }}
             />
 
-            {getLayout(<Component {...pageProps} />)}
+            <AnimatePresence mode="sync">
+              {getLayout(<Component {...pageProps} />)}
+            </AnimatePresence>
           </ThemeProvider>
           <ReactQueryDevtools initialIsOpen={false} />
         </CacheProvider>

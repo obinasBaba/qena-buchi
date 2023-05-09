@@ -112,6 +112,18 @@
               height: 100%;
               position: relative;
 
+              // nice hover effect
+              //transition: outline .3s ease-in-out;
+              &:hover {
+                outline: 2px solid s.$clrs-accent;
+
+
+                img{
+                  transform: scale(1.05);
+                  transition: transform .5s ease-out;
+                }
+              }
+
               //border: 1px solid blue;
 
               img {
@@ -120,6 +132,7 @@
                 width: 100% !important;
                 height: 100% !important;
                 max-width: 100%;
+                transition: transform .4s ease-in-out;
               }
 
               .info {

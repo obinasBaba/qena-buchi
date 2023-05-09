@@ -2210,10 +2210,10 @@
   "resolved" "https://registry.npmjs.org/frac/-/frac-1.1.2.tgz"
   "version" "1.1.2"
 
-"framer-motion@^10.12.5":
-  "integrity" "sha512-F45kz9gqsiUUvNQ3i7iggcxZpqz/nBIKNwnAsZ0Q1+qAYeEuTQxF2iQibfF7UC0bfhzt/dCf6PLdAcj7cdo0UA=="
-  "resolved" "https://registry.npmjs.org/framer-motion/-/framer-motion-10.12.5.tgz"
-  "version" "10.12.5"
+"framer-motion@10.12.8":
+  "integrity" "sha512-ylobYq3tGFjjAmRdBs5pL/R1+4AmOm69g/JbF5DcNETfRe8L9CjaX4acG83MjYdIsbsTGJmtR5qKx4glNmXO4A=="
+  "resolved" "https://registry.npmjs.org/framer-motion/-/framer-motion-10.12.8.tgz"
+  "version" "10.12.8"
   dependencies:
     "tslib" "^2.4.0"
   optionalDependencies:
