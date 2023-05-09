@@ -26,6 +26,7 @@ const steps = ['Select master', 'Create an ad group', 'Create an ad'];
 const Detail = () => {
   const router = useRouter();
   const { id } = router.query;
+  const [loading, setLoading] = useState(false);
   const { data } = usePetQueries();
   const [selectedAnimal, setSelectedAnimal] = useState<Animal>();
   const [activeStep, setActiveStep] = useState(0);
@@ -180,8 +181,10 @@ const Detail = () => {
                 <LoadingButton
                   variant="contained"
                   disabled={!userInfo.name || !userInfo.phone}
+                  loading={loading}
                   onClick={async () => {
                     // setActiveStep(2);
+                    setLoading(true);
 
                     const regPet = await axios
                       .post('/api/create-pet', {
@@ -235,8 +238,17 @@ const Detail = () => {
                           );
 
                           setActiveStep(2);
+                        } else {
+                          toast.error('Something went wrong!');
+                          setLoading(false);
                         }
+                      } else {
+                        toast.error('Something went wrong!');
+                        setLoading(false);
                       }
+                    } else {
+                      toast.error('Something went wrong!');
+                      setLoading(false);
                     }
                   }}
                 >

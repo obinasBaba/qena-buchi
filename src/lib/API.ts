@@ -51,7 +51,7 @@ API.interceptors.response.use(
       accessToken = response.data.access_token;
       accessTokenExpiry = String(Date.now() + response.data.expires_in * 1000);
 
-      console.log('accessToken --> ', accessToken);
+      console.log('new access accessToken --> ', accessToken);
 
       // store the updated access token and expiry time in localStorage
       localStorage.setItem('accessToken', accessToken as string);
