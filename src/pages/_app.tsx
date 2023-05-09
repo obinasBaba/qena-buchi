@@ -18,6 +18,7 @@ import adminTheme from '@/theme/admin-theme';
 import '@global/index.scss';
 import 'simplebar-react/dist/simplebar.min.css';
 import { useNProgress } from '@/util/hooks';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -73,6 +74,7 @@ export default function MyApp({
 
             {getLayout(<Component {...pageProps} />)}
           </ThemeProvider>
+          <ReactQueryDevtools initialIsOpen={false} />
         </CacheProvider>
       </ContextWrapper>
       {/*</SessionProvider>*/}

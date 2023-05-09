@@ -1,0 +1,80 @@
+@use '@/styles/index.scss' as s;
+
+.container {
+  width: 100%;
+  margin-top: 5rem;
+  min-height: 100vh;
+
+
+  // @include s.margin(top, 10rem);
+  // @include s.padding(bottom, 8rem);
+
+  & :local {
+
+    .wrapper {
+      display: flex;
+      flex-flow: column;
+      gap: 3rem;
+
+      @include s.media-breakpoint-up(md){
+        flex-direction: row;
+      }
+
+      .checkout {
+        flex: .35;
+
+        align-self: flex-start;
+        padding: 2.5rem 1rem;
+        order: 1;
+        width: 100%;
+        //border: 1px solid red;
+
+        @include s.media-breakpoint-up(md){
+          order: 2;
+          position: sticky;
+          top: 15%;
+        }
+
+        .content{
+          margin: 2rem;
+          display: grid;
+          place-items: center;
+
+        }
+      }
+
+      .detail {
+        border-radius: 2rem;
+        padding: 5rem;
+        background-color: #fff;
+        flex: .75;
+        order: 2;
+
+        @include s.media-breakpoint-up(md){
+          order: 1;
+        }
+
+        .title {
+          font-size: 2.2rem;
+        }
+
+        .info {
+          margin: 1.5rem 0;
+        }
+
+        .about {
+          margin-top: 2rem;
+
+          .meet {
+            margin-top: 3rem;
+
+            .about_desc {
+              //max-width: 60ch;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}

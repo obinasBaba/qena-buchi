@@ -30,7 +30,7 @@ export function createTheme() {
     palette: {
       ...palette,
       primary: {
-        main: '#0287B1',
+        main: '#A1612B',
       },
       mode: 'light',
     },

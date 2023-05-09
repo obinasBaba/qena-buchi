@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: [],
+    domains: ['dl5zpyw5k3jeb.cloudfront.net'],
   },
   modularizeImports: {
     '@mui/material': {

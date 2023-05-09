@@ -85,6 +85,7 @@ export function createComponents(config: { palette: PaletteOptions }) {
       styleOverrides: {
         root: {
           textTransform: 'none',
+          borderRadius: '50000px',
         },
         sizeSmall: {
           padding: '6px 16px',

@@ -1,5 +1,6 @@
 import { Box, Stack, Typography } from '@mui/material';
 import s from './layoutdashboard.module.scss';
+import Link from 'next/link';
 
 const SIDE_NAV_WIDTH = 280;
 const TOP_NAV_HEIGHT = 64;
@@ -38,7 +39,11 @@ export const TopNav = (props: PropsType) => {
           }}
         >
           <Stack alignItems="center" direction="row">
-            <Typography variant="h5">BUCHI</Typography>
+            <Link href="/">
+              <Typography variant="h5" color="wheat">
+                BUCHI
+              </Typography>
+            </Link>
           </Stack>
         </Stack>
       </Box>

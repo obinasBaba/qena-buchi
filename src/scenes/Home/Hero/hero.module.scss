@@ -1,0 +1,79 @@
+@use '@/styles/index.scss' as s;
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+
+  .buchi {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    img {
+      display: block;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .wrapper {
+    position: relative;
+    //border: 2px solid blue;
+    display: flex;
+    flex-flow: column;
+    gap: 2rem;
+    max-width: 92%;
+    margin-top: -4rem;
+
+    h2 {
+      line-height: 100%;
+      font-family: s.$fonts-Poppins !important;
+      color: s.$clrs-accent;
+      margin-top: 0;
+    }
+
+    .desc {
+      max-width: 40ch;
+      color: #525252;
+    }
+
+    .filters {
+      background-color: #EFEAE6;
+      padding: 2rem;
+      border-radius: 1rem;
+      max-width: 50rem;
+
+      .fields {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        .switch{
+          //border: 1px solid red;
+          padding-top: .5rem;
+        }
+
+        & :global {
+          .MuiInputBase-root {
+            border-color: rgba(s.$clrs-accent, .3);
+          }
+        }
+
+        button {
+          max-width: 10rem;
+          font-size: 1.1rem;
+          margin-left: auto;
+          width: 100%;
+          margin-top: 2.5rem;
+        }
+      }
+
+
+    }
+  }
+}

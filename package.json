@@ -15,7 +15,7 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc --noEmit",
-    "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
+    "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --fix --quiet",
     "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
     "postinstall": "husky install",
     "prisma:generate": "prisma generate",
@@ -58,6 +58,7 @@
     "react-dom": "18.2.0",
     "react-hot-toast": "2.4.1",
     "simplebar-react": "3.2.3",
+    "swiper": "9.2.4",
     "xlsx": "0.18.5"
   },
   "devDependencies": {

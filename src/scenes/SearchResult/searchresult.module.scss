@@ -1,0 +1,134 @@
+@use '@/styles/index.scss' as s;
+
+.container {
+  position: relative;
+  width: 100%;
+
+  // @include s.margin(top, 10rem);
+  // @include s.padding(bottom, 8rem);
+
+  .art {
+    position: fixed;
+    left: 1%;
+    bottom: -1%;
+    max-width: 13rem;
+    rotate: 20deg;
+
+    svg {
+      path {
+        fill: rgba(217, 176, 141, 0.16);
+      }
+    }
+  }
+
+  & :local {
+
+    .wrapper {
+      position: relative;
+      display: flex;
+      flex-flow: column;
+      gap: 1rem;
+      padding: 3rem;
+      margin-top: 5vmax;
+      height: 100%;
+
+      @include s.media-breakpoint-up(lg) {
+        flex-flow: row;
+        gap: 4rem;
+      }
+
+      //border: 1px solid red;
+
+      .filters {
+        width: 100%;
+        align-self: flex-start;
+        flex: .2;
+        display: flex;
+        flex-flow: column;
+        gap: 1rem;
+        // sticky to the top 10%
+        position: relative;
+
+        //border: 1px solid red;
+
+        & :global {
+          .MuiInputBase-root {
+            border-color: rgba(s.$clrs-accent, .5);
+          }
+        }
+
+        //border: 1px solid red;
+
+        .filter_list {
+          display: flex;
+          width: 100%;
+          //flex-flow: column;
+          flex-wrap: wrap;
+          gap: 1rem;
+          //border: 1px solid red;
+
+          & > * {
+            flex: 1;
+          }
+        }
+
+        @include s.media-breakpoint-up(lg) {
+          position: sticky;
+          top: 10%;
+
+
+          .filter_list {
+            flex-flow: column;
+          }
+        }
+
+      }
+
+      .content {
+        flex: .8;
+        //border: 1px solid red;
+
+        .results {
+
+          .title{
+            //border: 1px solid red;
+          }
+
+          .list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+
+            .card {
+              border-radius: 1rem;
+              overflow: hidden;
+              max-height: 17vmax;
+              position: relative;
+
+              //border: 1px solid blue;
+
+              img {
+                display: block;
+                object-fit: cover;
+                width: 100% !important;
+                height: 100% !important;
+                max-width: 100%;
+              }
+
+              .info {
+                background-color: rgba(224, 207, 197, 0.45);
+                backdrop-filter: blur(4px);
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                padding: .9rem 1rem;
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
