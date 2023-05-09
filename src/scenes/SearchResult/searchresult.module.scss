@@ -88,7 +88,12 @@
         flex: .8;
         //border: 1px solid red;
 
+        .pagination{
+          margin-top: 4rem;
+        }
+
         .results {
+          min-height: 50vh;
 
           .title{
             //border: 1px solid red;
@@ -97,7 +102,7 @@
           .list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-            gap: 1.5rem;
+            gap: 2.5rem;
             margin-top: 2rem;
 
             .card {
@@ -124,6 +129,14 @@
                 bottom: 0;
                 width: 100%;
                 padding: .9rem 1rem;
+
+                h5{
+                  max-width: 14ch;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  text-transform: capitalize;
+                }
               }
             }
           }

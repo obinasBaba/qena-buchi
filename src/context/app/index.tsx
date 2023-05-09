@@ -6,6 +6,7 @@ export interface State {
     age?: string;
     gender?: string;
     size?: string;
+    page?: string;
     good_with_children?: boolean;
   } | null;
 }

@@ -81,8 +81,23 @@ export type Animal = {
   };
 };
 
+type Pagination = {
+  count_per_page: number;
+  total_count: number;
+  current_page: number;
+  total_pages: number;
+  _links: {
+    next: {
+      href: string;
+    };
+  };
+};
+
 const queryFn: QueryFunction<
-  { animals: Animal[] },
+  {
+    animals: Animal[];
+    pagination: Pagination;
+  },
   [Exclude<State['filters'], null>, string]
 > = async ({ queryKey }) => {
   const url = '/animals';
@@ -90,7 +105,10 @@ const queryFn: QueryFunction<
 
   try {
     const res = await API.get(url, {
-      params: filters,
+      params: {
+        ...filters,
+        limit: 10,
+      },
     });
     console.log('pet res: ', res.data);
     return res.data;

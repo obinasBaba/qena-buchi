@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import s from './searchresult.module.scss';
 import {
   Alert,
@@ -6,6 +6,7 @@ import {
   Chip,
   CircularProgress,
   Container,
+  Pagination,
   Stack,
   TextField,
   Typography,
@@ -38,6 +39,7 @@ const Art = () => (
 const SearchResult = () => {
   const { data, isLoading, isFetching } = usePetQueries();
   const { filters, setFilters } = useAppContext();
+  const [page, setPage] = useState(1);
 
   console.log('search result data: ', data);
 
@@ -252,6 +254,23 @@ const SearchResult = () => {
                 </Typography>
               </Alert>
             )}
+          </div>
+
+          <div className={s.pagination}>
+            <Pagination
+              count={data?.pagination?.total_pages}
+              page={Number(filters?.page || 1)}
+              color="primary"
+              size="large"
+              onChange={(event, value) => {
+                console.log('value: ', value);
+
+                setFilters({
+                  ...filters,
+                  page: value,
+                });
+              }}
+            />
           </div>
         </div>
       </Container>
