@@ -115,7 +115,7 @@ const queryFn: QueryFunction<
     return res.data;
   } catch (err: any) {
     console.log('pet queryFn err: ', err);
-    toast.error(err.message || 'Something went wrong');
+    // toast.error(err.message || 'Something went wrong');
     throw err;
   }
 };

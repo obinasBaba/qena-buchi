@@ -89,15 +89,13 @@ const Hero = () => {
       <Container maxWidth={'xxl' as any} className={s.wrapper}>
         <motion.div>
           <Typography variant="h2">
-            Over 200,000+ stray Dogs <br />
-            on Addis Ababa streets <br />
-            in 2023!
+            Over 200,000+ stray Dogs on Addis Ababa streets in 2023!
           </Typography>
         </motion.div>
 
         <motion.div variants={variants} transition={transition}>
           <Typography variant="h5" gutterBottom>
-            Be part of the solution
+            l Be part of the solution
           </Typography>
 
           <Typography className={s.desc}>

@@ -106,11 +106,16 @@
             margin-top: 2rem;
 
             .card {
+              position: relative;
               border-radius: 1rem;
               overflow: hidden;
-              max-height: 17vmax;
+              max-height: 25vmax;
               height: 100%;
-              position: relative;
+
+              @include s.media-breakpoint-up(lg) {
+                max-width: 16rem;
+                max-height: 17vmax;
+              }
 
               // nice hover effect
               //transition: outline .3s ease-in-out;
