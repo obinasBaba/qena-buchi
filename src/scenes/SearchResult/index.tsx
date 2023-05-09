@@ -3,13 +3,14 @@ import s from './searchresult.module.scss';
 import {
   Alert,
   Autocomplete,
+  Chip,
   CircularProgress,
   Container,
   Stack,
   TextField,
   Typography,
 } from '@mui/material';
-import Buchi from './placeholder.svg';
+import Buchi from '@/public/images/placeholder.svg';
 import Image from 'next/image';
 import clsx from 'clsx';
 import { useAppContext } from '@/context/app';
@@ -212,7 +213,7 @@ const SearchResult = () => {
               className={s.title}
             >
               <Typography variant="h4" noWrap>
-                Search Results :{' '}
+                Search Results : <Chip label={data?.animals.length} />
               </Typography>
               {(isLoading || isFetching) && (
                 <div className={s.loader}>
@@ -220,6 +221,8 @@ const SearchResult = () => {
                 </div>
               )}
             </Stack>
+
+            <hr style={{ margin: '2rem 0' }} />
 
             {!isFetching && !isLoading && (
               <div className={s.list}>
