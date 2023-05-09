@@ -55,7 +55,7 @@ export default function MyApp({
               name="viewport"
               content="initial-scale=1, width=device-width"
             />
-            <title>sms - service</title>
+            <title>Buchi</title>
             <link rel="icon" href="/favicon.ico" />
           </Head>
           <ThemeProvider theme={adminTheme}>
