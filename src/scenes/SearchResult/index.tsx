@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import s from './searchresult.module.scss';
 import {
   Alert,
+  AlertTitle,
   Autocomplete,
   Chip,
   CircularProgress,
@@ -217,7 +218,7 @@ const SearchResult = () => {
               <Typography variant="h4" noWrap>
                 Search Results : <Chip label={data?.animals.length} />
               </Typography>
-              {(isLoading || isFetching) && (
+              {(isLoading || isFetching) && filters !== null && (
                 <div className={s.loader}>
                   <CircularProgress />
                 </div>
@@ -225,6 +226,16 @@ const SearchResult = () => {
             </Stack>
 
             <hr style={{ margin: '2rem 0' }} />
+
+            {filters === null && (
+              <Alert severity="warning">
+                <AlertTitle>oppss</AlertTitle>
+                <Typography>
+                  You have not applied any filters. Please apply filters to get
+                  awesome pets.
+                </Typography>
+              </Alert>
+            )}
 
             {!isFetching && !isLoading && (
               <div className={s.list}>

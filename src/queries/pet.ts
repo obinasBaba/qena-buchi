@@ -2,6 +2,7 @@ import { QueryFunction, useQuery } from '@tanstack/react-query';
 import { useEffect } from 'react';
 import API from '@/lib/API';
 import { State, useAppContext } from '@/context/app';
+import toast from 'react-hot-toast';
 
 export type Animal = {
   id: number;
@@ -112,8 +113,9 @@ const queryFn: QueryFunction<
     });
     console.log('pet res: ', res.data);
     return res.data;
-  } catch (err) {
+  } catch (err: any) {
     console.log('pet queryFn err: ', err);
+    toast.error(err.message || 'Something went wrong');
     throw err;
   }
 };
